@@ -24,11 +24,12 @@ document.onkeyup = function(event) {
 
 function updateMysteryDisplay(l){
 	if (l <= -1) {
-		mysteryDisplay = "X"
-		alert("Function running")
-	//	for (i = 0; i < letterCount; i++) { 
-    		//mysteryDisplay = mysteryDisplay + "_"
-	//	}
+		mysteryDisplay = ""
+		for (i = 0; i < letterCount; i++) { 
+    		mysteryDisplay = mysteryDisplay + "_ "
+		}
+	} elseif (l <= 0) {
+		
 	}
 
 	document.getElementById("mystery-word-display").innerHTML = mysteryDisplay;
