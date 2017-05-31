@@ -21,3 +21,7 @@ h1 {
 #user-text {
 	text-transform: uppercase;
 }
+
+#already_guessed {
+	text-transform: uppercase;
+}

@@ -17,23 +17,8 @@
 	<p>Already guessed: <span id="already_guessed"></span></p>
 
 	<script type="text/javascript">
-	   // Let's start by grabbing a reference to the <span> below.
-	   var userText = document.getElementById("user-text");
-	  // var yourGuesses = []
-
-       // Next, we give JavaScript a function to execute when onkeyup event fires.
-       document.onkeyup = function(event) {
-       	userText.textContent = event.key;
-       	if (userText.textContent != "Meta"){
-        	yourGuesses.push(userText.textContent);
-        } 
-        document.getElementById("already_guessed").innerHTML = yourGuesses;
-       };
-
-      // var testArray = [1, 2, 3];
-
-       
-       alert(yourGuesses);
+	   // Grab a reference to the <span> below.
+	   var userText = document.getElementById("user-text");    
 
     </script>
 </body>
