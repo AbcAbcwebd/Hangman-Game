@@ -1,26 +1,25 @@
 var yourGuesses = [];
 var secretWord = "tiki";
-//var letterCount = secretWord.length;
-//var mysteryDisplay = ""
-//var l = -1;
+var letterCount = secretWord.length;
+var mysteryDisplay = ""
+var l = -2;
 
 // Give JavaScript a function to execute when onkeyup event fires.
 document.onkeyup = function(event) {
     userText.textContent = event.key;
-       //	if (userText.textContent != "Meta"){
-       // 	yourGuesses.push(userText.textContent);
-        	//var n = secretWord.search(userText.textContent);
-        	//alert(n);
-        	//if (n >= 0){
+       	if (userText.textContent != "Meta"){
+        	yourGuesses.push(userText.textContent);
+        	var n = secretWord.search(userText.textContent);
+        	if (n >= 0){
         		//Letter is present
-        		//updateMysteryDisplay(n)
-        //	} else {
+        		updateMysteryDisplay(n)
+        	} else {
         		//Letter is not present
-        	//}
-       // } //else {
-        	//updateMysteryDisplay("meta")
-      //  }
-   // document.getElementById("already_guessed").innerHTML = yourGuesses.join(" ");
+        	}
+        } else {
+        	updateMysteryDisplay(-3)
+        }
+    document.getElementById("already_guessed").innerHTML = yourGuesses.join(" ");
 }
 
 function updateMysteryDisplay(l){
