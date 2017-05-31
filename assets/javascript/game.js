@@ -23,13 +23,14 @@ document.onkeyup = function(event) {
 }
 
 function updateMysteryDisplay(l){
-	//if l = 0 {
-		//mysteryDisplay.setText("")
+	if (l <= -1) {
+		mysteryDisplay = "X"
+		alert("Function running")
 	//	for (i = 0; i < letterCount; i++) { 
     		//mysteryDisplay = mysteryDisplay + "_"
 	//	}
-	//}
+	}
 
-	//document.getElementById("mystery-word-display").innerHTML = mysteryDisplay;
+	document.getElementById("mystery-word-display").innerHTML = mysteryDisplay;
 
 }
