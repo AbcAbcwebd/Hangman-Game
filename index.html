@@ -19,20 +19,21 @@
 	<script type="text/javascript">
 	   // Let's start by grabbing a reference to the <span> below.
 	   var userText = document.getElementById("user-text");
-
-	   document.getElementById("already_guessed").innerHTML = "Hello world";
+	  // var yourGuesses = []
 
        // Next, we give JavaScript a function to execute when onkeyup event fires.
        document.onkeyup = function(event) {
        	userText.textContent = event.key;
        	if (userText.textContent != "Meta"){
         	yourGuesses.push(userText.textContent);
-        	alert("Not meta!");
-        } else {
-        	alert("Meta!");
-        }
-        alert(yourGuesses);
+        } 
+        document.getElementById("already_guessed").innerHTML = yourGuesses;
        };
+
+      // var testArray = [1, 2, 3];
+
+       
+       alert(yourGuesses);
 
     </script>
 </body>
