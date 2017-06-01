@@ -10,13 +10,19 @@
 </head>
 <body>
 	<h1>Tiki Hangman</h1>
-	<img id="game_display" src="assets/images/TikiMan1H6.png" alt="Tiki hangman game, all body parts present." class="game_display">
+	<img id="game_display" src="assets/images/TikiMan1HB.png" alt="Tiki hangman game, all body parts present." class="game_display">
 	
 	<h2>The word: <span id="mystery-word-display"></span></h2>
 
 	<h3>Your guess: <span id="user-text"><strong>...</strong></span></h3>
 
 	<p>Already guessed: <span id="already_guessed"></span></p>
+
+	<p>Guesses remaining: <span id="guess-remain">7</span></p>
+
+	<p>Letters Guessed: <span id="wins">0</span></p>
+
+	<p>Rounds won: <span id="total-wins">0</span></p>
 
 	<script type="text/javascript">
 	   // Grab a reference to the <span> below.

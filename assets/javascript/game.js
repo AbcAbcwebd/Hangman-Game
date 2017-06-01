@@ -1,11 +1,16 @@
 var yourGuesses = [];
-var secretWord = "tiki";
+var possibleWords = ["tiki", "sunscreen", "umbrella", "surf", "beach", "sun", "rum"];
+var gameWins = 0;
+var secretWord = possibleWords[gameWins];
 var letterCount = secretWord.length;
-var mysteryDisplay = ""
+var mysteryDisplay = "";
 var wordArray = secretWord.split("");
 var displayArray = [];
-var deaths = 0;
+var lives = 8;
 var images = ["TikiMan1H6.png", "TikiMan1H5.png", "TikiMan1H4.png", "TikiMan1H3.png", "TikiMan1H2.png", "TikiMan1H1.png", "TikiMan1H0.png", "TikiMan1HB.png"];
+var wins = 0;
+var lettersLeft = letterCount;
+
 // Onkey up function
 document.onkeyup = function(event) {
     userText.textContent = event.key;
@@ -54,11 +59,47 @@ function findAllInstances(array, t) {
 // This is what executes if a user guesses a correct letter.
 function recordLetter(letter){
     updateMysteryDisplay(letter);
+    wins = wins + 1;
+    document.getElementById("wins").innerHTML = wins;
+    lettersLeft = lettersLeft - 1;
+    if (lettersLeft <= 0) {
+        //User wins
+        userWins()
+    }
 }
 
 // This is what executes if a user guesses incorrectly. 
 function loseLife(){
-    deaths = deaths + 1;
-    directory = "assets/images/" + images[deaths];
-    document.getElementById("game_display").src=directory;
+    lives = lives - 1;
+    directory = "assets/images/" + images[lives];
+    document.getElementById("game_display").src = directory;
+    document.getElementById("guess-remain").innerHTML = lives;
+    if (lives <= 0) {
+        //User loses
+        userLoses()
+    }
+}
+
+function userWins() {
+    alert("You Win!!");
+    gameWins = gameWins + 1;
+    newGame();
+    document.getElementById("total-wins").innerHTML = gameWins;
+}
+
+function userLoses() {
+    alert("You lose...");
+    newGame();
+}
+
+function newGame() {
+    secretWord = possibleWords[gameWins];
+    letterCount = secretWord.length;
+    wordArray = secretWord.split("");
+    lives = 7;
+    wins = 0;
+    lettersLeft = letterCount;
+    yourGuesses = [];
+    initiateMysteryDisplay()
+    document.getElementById("game_display").src = "assets/images/TikiMan1HB.png";
 }
