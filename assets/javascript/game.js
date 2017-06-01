@@ -2,26 +2,17 @@ var yourGuesses = [];
 var secretWord = "tiki";
 var letterCount = secretWord.length;
 var mysteryDisplay = ""
-var l = -2;
 var wordArray = secretWord.split("");
 var displayArray = [];
 
 // Onkey up function
 document.onkeyup = function(event) {
     userText.textContent = event.key;
-    updateMysteryDisplay(1);
-       	if ((userText.textContent != "Meta") && ((userText.textContent).match(/[a-z]/i))){
-        	yourGuesses.push(userText.textContent);
-        	var n = wordArray.indexOf(userText.textContent);
-        	if (n >= 0){
-        		//Letter is present
-        		updateMysteryDisplay(n);
-        	} else {
-        		//Letter is not present
-        	}
-        } else if (userText.textContent === "Meta") {
-        	updateMysteryDisplay(-3)
-        }
+    if ((userText.textContent != "Meta") && ((userText.textContent).match(/[a-z]/i))){
+        yourGuesses.push(userText.textContent);
+        instances = findAllInstances(wordArray, userText.textContent);
+        instances.forEach(recordLetter);
+    } 
     document.getElementById("already_guessed").innerHTML = yourGuesses.join(" ");
 }
 
@@ -43,6 +34,7 @@ function updateMysteryDisplay(l){
 	}
 }
 
+// Cycles an array for a particular letter and returns all indexes at which that letter appears.
 function findAllInstances(array, t) {
     indexes = []
     for (y = 0; y < array.length; y++) { 
@@ -51,4 +43,9 @@ function findAllInstances(array, t) {
             }
     }
     return indexes
+}
+
+// This is what executes if a user guesses a correct letter.
+function recordLetter(letter){
+    alert(letter);
 }
