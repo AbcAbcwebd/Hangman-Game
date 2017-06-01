@@ -4,7 +4,8 @@ var letterCount = secretWord.length;
 var mysteryDisplay = ""
 var wordArray = secretWord.split("");
 var displayArray = [];
-
+var deaths = 0;
+var images = ["TikiMan1H6.png", "TikiMan1H5.png", "TikiMan1H4.png", "TikiMan1H3.png", "TikiMan1H2.png", "TikiMan1H1.png", "TikiMan1H0.png", "TikiMan1HB.png"];
 // Onkey up function
 document.onkeyup = function(event) {
     userText.textContent = event.key;
@@ -12,7 +13,11 @@ document.onkeyup = function(event) {
     if ((userText.textContent != "Meta") && ((userText.textContent).match(/[a-z]/i)) && (yourGuesses.indexOf(userText.textContent) < 0)){
         yourGuesses.push(userText.textContent);
         instances = findAllInstances(wordArray, userText.textContent);
-        instances.forEach(recordLetter);
+        if (instances.length > 0) {
+            instances.forEach(recordLetter);
+        } else if (instances.length <= 0) {
+            loseLife();
+        }
     } 
     document.getElementById("already_guessed").innerHTML = yourGuesses.join(" ");
 }
@@ -49,4 +54,11 @@ function findAllInstances(array, t) {
 // This is what executes if a user guesses a correct letter.
 function recordLetter(letter){
     updateMysteryDisplay(letter);
+}
+
+// This is what executes if a user guesses incorrectly. 
+function loseLife(){
+    deaths = deaths + 1;
+    directory = "assets/images/" + images[deaths];
+    document.getElementById("game_display").src=directory;
 }
