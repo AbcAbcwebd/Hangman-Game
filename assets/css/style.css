@@ -10,6 +10,7 @@ h1 {
 	font-size: 250%;
 	text-align: center;
 	margin-top: 30px;
+	font-family: 'Luckiest Guy', cursive;
 }
 
 .game_display {
@@ -26,6 +27,27 @@ h1 {
 	text-transform: uppercase;
 }
 
+p {
+	font-family: 'Luckiest Guy', cursive;
+	font-family: 'Covered By Your Grace', cursive;
+	font-size: 180%;
+	margin-left: 25px;
+	text-align: left;
+	text-align: center;
+}
+
+.info-display {
+	float: left;
+	margin-left: 55px;
+	margin-top: 30px;
+	width: 500px;
+	height: 250px;
+	background-image: url("../images/wood-website-sign.png");
+	background-size: 100%;
+	padding-top: 40px;
+}
+
 #mystery-word-display {
 	text-transform: uppercase;
+
 }
