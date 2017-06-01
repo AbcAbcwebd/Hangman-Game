@@ -25,3 +25,7 @@ h1 {
 #already_guessed {
 	text-transform: uppercase;
 }
+
+#mystery-word-display {
+	text-transform: uppercase;
+}

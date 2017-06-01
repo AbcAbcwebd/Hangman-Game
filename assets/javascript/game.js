@@ -8,7 +8,8 @@ var displayArray = [];
 // Onkey up function
 document.onkeyup = function(event) {
     userText.textContent = event.key;
-    if ((userText.textContent != "Meta") && ((userText.textContent).match(/[a-z]/i))){
+    userText.textContent = userText.textContent.toLowerCase();
+    if ((userText.textContent != "Meta") && ((userText.textContent).match(/[a-z]/i)) && (yourGuesses.indexOf(userText.textContent) < 0)){
         yourGuesses.push(userText.textContent);
         instances = findAllInstances(wordArray, userText.textContent);
         instances.forEach(recordLetter);
@@ -47,5 +48,5 @@ function findAllInstances(array, t) {
 
 // This is what executes if a user guesses a correct letter.
 function recordLetter(letter){
-    alert(letter);
+    updateMysteryDisplay(letter);
 }
