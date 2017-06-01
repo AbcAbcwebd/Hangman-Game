@@ -28,7 +28,7 @@ function updateMysteryDisplay(l){
 		for (i = 0; i < letterCount; i++) { 
     		mysteryDisplay = mysteryDisplay + "_ "
 		}
-	} elseif (l <= 0) {
+	} else if (l <= 0) {
 		
 	}
 
