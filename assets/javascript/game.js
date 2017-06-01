@@ -42,3 +42,13 @@ function updateMysteryDisplay(l){
         document.getElementById("mystery-word-display").innerHTML = displayArray.join(" ");
 	}
 }
+
+function findAllInstances(array, t) {
+    indexes = []
+    for (y = 0; y < array.length; y++) { 
+            if (array[y] === t) {
+                indexes.push(y);
+            }
+    }
+    return indexes
+}
