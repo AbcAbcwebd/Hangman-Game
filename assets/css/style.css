@@ -57,7 +57,17 @@ p {
 	width: 300px;
 	margin-top: 60px;
 	font-size: 250%;
-	padding-bottom: 300px;
+	padding-bottom: 100px;
+	margin-bottom: 300px;
+}
+
+#key_cont {
+	width: 80%;
+	padding-bottom: 200px;
+}
+
+.keys {
+	float: left;
 }
 
 @media screen and (min-width: 1024px) {
@@ -66,10 +76,52 @@ p {
 	}
 
 	.info-display {
-		margin-left: 55px;
+		margin-left: 85px;
 		margin-top: 30px;
 		width: 500px;
-		height: 250px;
-		padding-top: 40px;
+		height: 265px;
+		padding-top: 25px;
 	}
+
+	.game_display {
+		width: 30%;
+		float: left;
+		margin-top: 15px;
+	}
+
+	#disp-con {
+		float: left;
+		width: 300px;
+		margin-top: 60px;
+		font-size: 250%;
+		padding-bottom: 100px;
+		margin-left: 175px;
+	}
+
+}
+
+@media screen and (min-width: 1280px) {
+	.game_display {
+		width: 20%;
+		float: left;
+		margin-top: 15px;
+	}
+
+	.info-display {
+		margin-left: 250px;
+		margin-top: 30px;
+		width: 500px;
+		height: 265px;
+		padding-top: 25px;
+	}
+
+	#disp-con {
+		float: left;
+		width: 300px;
+		margin-top: 60px;
+		font-size: 250%;
+		padding-bottom: 100px;
+		margin-left: 350px;
+	}
+
 }
