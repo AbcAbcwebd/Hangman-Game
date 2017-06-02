@@ -25,6 +25,7 @@ document.onkeyup = function(event) {
         }
     } 
     document.getElementById("already_guessed").innerHTML = yourGuesses.join(" ");
+    document.getElementById("disp-con").innerHTML = "";
 }
 
 // Function to iniate the spaces and letters mystery display.
