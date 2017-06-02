@@ -4,6 +4,19 @@ body {
 	background: -o-linear-gradient(bottom right, #2cacf7, #1373ad); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(bottom right, #2cacf7, #1373ad); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, #2cacf7, #1373ad); /* Standard syntax */
+	animation-name: back-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes back-animation {
+    from {
+	    
+    }
+    to {
+    	
+    }
 }
 
 h1 {
@@ -68,6 +81,53 @@ p {
 
 .keys {
 	float: left;
+}
+
+/* This section of code is adapted from code created by Ted McDonald and provided under an MIT Creative Commons license. This section of code (lines 87-110) are also provided under a Creative Commons license. This license does not extend to other elements of the project, such as the tiki graphics which were commerically licensed and cannot be posted under an MIT license. */
+	.ocean { 
+	  height: 5%;
+	  width:100%;
+	  position:absolute;
+	  bottom:0;
+	  left:0;
+	  background: #08acdb;
+	  z-index: -1;
+	}
+
+	.wave {
+	  background: url(http://tedmcdo.com/labs/wave.svg) repeat-x; 
+	  position: absolute;
+	  top: -198px;
+	  width: 6400px;
+	  height: 198px;
+	  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+	  transform: translate3d(0, 0, 0);
+	  z-index: -1;
+	}
+
+	.wave:nth-of-type(2) {
+	  top: -175px;
+	  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+	  opacity: 1;
+	  z-index: -1;
+	}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
 }
 
 @media screen and (min-width: 1024px) {
